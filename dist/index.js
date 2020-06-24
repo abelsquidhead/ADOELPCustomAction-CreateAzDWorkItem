@@ -3852,10 +3852,16 @@ function run() {
                     "path": "/fields/System.IterationPath",
                     "from": null,
                     "value": "ADOELPDemo\\Sprint 1"
+                },
+                {
+                    "op": "add",
+                    "path": "/fields/System.State",
+                    "from": null,
+                    "value": "ADOELPDemo\\Approved"
                 }
             ];
             console.log('trying to create work item');
-            wit.createWorkItem({}, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None);
+            wit.createWorkItem({}, createWorkItemJson, project, workitemType, false, true, false, witi.WorkItemExpand.None);
             console.log('created work item');
         }
         catch (error) {
