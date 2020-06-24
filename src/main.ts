@@ -24,10 +24,12 @@ async function run(): Promise<void> {
     const prUrl = context.payload.pull_request?.html_url;
     const prBody = context.payload.pull_request?.body;
     const eventName = context.eventName;
+    const comment = context.payload.comment;
 
     console.log("prUrl: " + prUrl);
     console.log("prBody: " + prBody);
-    console.log("eventName:" + eventName);
+    console.log("comment:" + comment);
+
 
     // connect to AzD
     let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
