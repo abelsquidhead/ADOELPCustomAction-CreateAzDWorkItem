@@ -83,7 +83,11 @@ async function run(): Promise<void> {
         "from": null,
         "value": {
             "rel": "ArtifactLink",
-             "url": prUrl
+             "url": prUrl,
+             "attributes": {
+              "name": "GitHub Pull Request",
+              "comment": "333"
+            }
         }
       }
     ];
