@@ -23,13 +23,30 @@ async function run(): Promise<void> {
     const context = github.context;
     const prUrl = context.payload.pull_request?.html_url;
     const prBody = context.payload.pull_request?.body;
+    
     const eventName = context.eventName;
+    const workflow = context.workflow;
+    const action = context.payload.action;
     const comment = context.payload.comment;
+    const installation = context.payload.installation;
+    const issue = context.payload.issue;
+    const pullrequest = context.payload.pull_request;
+    const repository = context.payload.repository;
+    const sender = context.payload.sender;
 
     console.log("prUrl: " + prUrl);
     console.log("prBody: " + prBody);
-    console.log("comment:" + comment);
+    console.log("workflow:" + workflow);
 
+    console.log("eventName:" + eventName);
+    console.log("workflow:" + workflow);
+    console.log("action:" + action);
+    console.log("comment:" + comment);
+    console.log("installation:" + installation);
+    console.log("issue:" + issue);
+    console.log("pullrequest:" + pullrequest);
+    console.log("repository:" + repository);
+    console.log("sender:" + sender);
 
     // connect to AzD
     let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";

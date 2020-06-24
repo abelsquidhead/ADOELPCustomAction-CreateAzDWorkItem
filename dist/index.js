@@ -5170,10 +5170,26 @@ function run() {
             const prUrl = (_a = context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.html_url;
             const prBody = (_b = context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.body;
             const eventName = context.eventName;
+            const workflow = context.workflow;
+            const action = context.payload.action;
             const comment = context.payload.comment;
+            const installation = context.payload.installation;
+            const issue = context.payload.issue;
+            const pullrequest = context.payload.pull_request;
+            const repository = context.payload.repository;
+            const sender = context.payload.sender;
             console.log("prUrl: " + prUrl);
             console.log("prBody: " + prBody);
+            console.log("workflow:" + workflow);
+            console.log("eventName:" + eventName);
+            console.log("workflow:" + workflow);
+            console.log("action:" + action);
             console.log("comment:" + comment);
+            console.log("installation:" + installation);
+            console.log("issue:" + issue);
+            console.log("pullrequest:" + pullrequest);
+            console.log("repository:" + repository);
+            console.log("sender:" + sender);
             // connect to AzD
             let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
             let token = "ppbs6zhmq5xtupvumfvxcx4qjbh7dxkro72tew5ia6na53lhmppq";
