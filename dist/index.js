@@ -5173,6 +5173,7 @@ function run() {
             console.log("prUrl: " + prUrl);
             console.log("prBody: " + prBody);
             console.log("eventName:" + eventName);
+            console.log("eventName:" + eventName);
             // connect to AzD
             let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
             let token = "ppbs6zhmq5xtupvumfvxcx4qjbh7dxkro72tew5ia6na53lhmppq";
