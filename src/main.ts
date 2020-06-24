@@ -19,26 +19,22 @@ async function run(): Promise<void> {
     // get reference to octokit
     const octokit = github.getOctokit(myToken);
 
-    // get reference to current context
+    // get reference to current context and get info about pull request
     const context = github.context;
     const prUrl = context.payload.pull_request?.html_url;
     const prBody = context.payload.pull_request?.body;
     const prNumber: number = <number>context.payload.pull_request?.number;
-
     const { data: pullRequest } = await octokit.pulls.get( {
       owner: 'abelsquidhead',
       repo: 'TailwindsTraders-Website',
       pull_number: prNumber,
  
     });
-
     const title = pullRequest.title
 
-    
-
+    // print out the info from PR
     console.log("prUrl: " + prUrl);
     console.log("prBody: " + prBody);
-
     console.log("title: " + title);
 
 
@@ -61,7 +57,7 @@ async function run(): Promise<void> {
         "op": "add",
         "path": "/fields/System.Title", 
         "from": null, 
-        "value": "PR FROM MY ACTION!!!!" 
+        "value": title 
       },
       {
         "op": "add",
@@ -80,6 +76,15 @@ async function run(): Promise<void> {
         "path": "/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Lane", 
         "from": null, 
         "value": "PR"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "from": null,
+        "value": {
+            "rel": "ArtifactLink",
+             "url": prUrl
+        }
       }
     ];
     console.log('trying to create work item');

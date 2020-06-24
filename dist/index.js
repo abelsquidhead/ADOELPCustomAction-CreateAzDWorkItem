@@ -5165,7 +5165,7 @@ function run() {
             console.log("myToken: " + myToken);
             // get reference to octokit
             const octokit = github.getOctokit(myToken);
-            // get reference to current context
+            // get reference to current context and get info about pull request
             const context = github.context;
             const prUrl = (_a = context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.html_url;
             const prBody = (_b = context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.body;
@@ -5176,6 +5176,7 @@ function run() {
                 pull_number: prNumber,
             });
             const title = pullRequest.title;
+            // print out the info from PR
             console.log("prUrl: " + prUrl);
             console.log("prBody: " + prBody);
             console.log("title: " + title);
@@ -5195,7 +5196,7 @@ function run() {
                     "op": "add",
                     "path": "/fields/System.Title",
                     "from": null,
-                    "value": "PR FROM MY ACTION!!!!"
+                    "value": title
                 },
                 {
                     "op": "add",
@@ -5214,6 +5215,15 @@ function run() {
                     "path": "/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Lane",
                     "from": null,
                     "value": "PR"
+                },
+                {
+                    "op": "add",
+                    "path": "/relations/-",
+                    "from": null,
+                    "value": {
+                        "rel": "ArtifactLink",
+                        "url": prUrl
+                    }
                 }
             ];
             console.log('trying to create work item');
