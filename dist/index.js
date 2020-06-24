@@ -3858,6 +3858,12 @@ function run() {
                     "path": "/fields/System.State",
                     "from": null,
                     "value": "Approved"
+                },
+                {
+                    "op": "add",
+                    "path": "/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Lane",
+                    "from": null,
+                    "value": "PR"
                 }
             ];
             console.log('trying to create work item');

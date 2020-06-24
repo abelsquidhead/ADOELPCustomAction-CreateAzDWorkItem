@@ -1,0 +1,123 @@
+{
+    "id":"fea1de46-008a-444a-93bf-4eef1da0e500",
+    "url":"https://dev.azure.com/AzureDevOpsDemo-a/b1c34419-e080-4bf1-b12d-78710745e88e/1b342688-06ac-4233-98ee-f4e4175cf41d/_apis/work/boards/fea1de46-008a-444a-93bf-4eef1da0e500",
+    "name":"Backlog items",
+    "revision":0,
+    "columns":[
+        {
+            "id":"57526329-ce1a-4220-b77c-7e676941db2b",
+            "name":"New",
+            "itemLimit":0,
+            "stateMappings":{
+                "Bug":"New",
+                "Product Backlog Item":"New",
+                "PR":"To Do"
+            },
+            "columnType":"incoming"
+        },
+        {
+            "id":"eaab6ad7-070e-4320-90d0-bd28d69910be",
+            "name":"Approved",
+            "itemLimit":5,
+            "stateMappings":{
+                "Bug":"Approved",
+                "Product Backlog Item":"Approved",
+                "PR":"Approved"
+            },
+            "isSplit":false,
+            "description":"",
+            "columnType":"inProgress"
+        },
+        {
+            "id":"dbe8969d-fead-4dde-8c43-7e998a0de837",
+            "name":"Committed",
+            "itemLimit":5,
+            "stateMappings":{
+                "Bug":"Committed",
+                "Product Backlog Item":"Committed",
+                "PR":"To Do"
+            },
+            "isSplit":true,
+            "description":"",
+            "columnType":"inProgress"
+        },
+        {
+            "id":"78fabddb-6b8a-46bb-a38b-65a5ecf53883",
+            "name":"Done",
+            "itemLimit":0,
+            "stateMappings":{
+                "Bug":"Done",
+                "Product Backlog Item":"Done",
+                "PR":"Done"
+            },
+            "columnType":"outgoing"
+        }
+    ],
+    "rows":[
+        {
+            "id":"148495a8-59bb-40e3-ab23-614d82bc8ef0",
+            "name":"Emergency"
+        },
+        {
+            "id":"c3a13c40-7afb-4d26-9258-e7c59661803e",
+            "name":"PR"
+        },
+        {
+            "id":"00000000-0000-0000-0000-000000000000",
+            "name":"In Sprint"
+        }
+    ],
+    "isValid":true,
+    "allowedMappings":{
+        "Incoming":{
+            "Bug":["New"],
+            "Product Backlog Item":["New"],
+            "PR":["To Do"]
+        },
+        "InProgress":{
+            "Bug":["Approved","Committed","New"],
+            "Product Backlog Item":["Approved","Committed","New"],
+            "PR":["To Do","Approved","In Progress"]
+        },
+        "Outgoing":{
+            "Bug":["Done"],
+            "Product Backlog Item":["Done"],
+            "PR":["Done"]
+        }
+    },
+    "canEdit":true,
+    "fields":{
+        "columnField":{
+            "referenceName":"WEF_55FBA321D976426486844EECE72D33D4_Kanban.Column",
+            "url":"https://dev.azure.com/AzureDevOpsDemo-a/_apis/wit/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Column"
+        },
+        "rowField":{
+            "referenceName":"WEF_55FBA321D976426486844EECE72D33D4_Kanban.Lane",
+            "url":"https://dev.azure.com/AzureDevOpsDemo-a/_apis/wit/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Lane"
+        },
+        "doneField":{
+            "referenceName":"WEF_55FBA321D976426486844EECE72D33D4_Kanban.Column.Done",
+            "url":"https://dev.azure.com/AzureDevOpsDemo-a/_apis/wit/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Column.Done"
+        }
+    },
+    "_links":{
+        "self":{
+            "href":"https://dev.azure.com/AzureDevOpsDemo-a/b1c34419-e080-4bf1-b12d-78710745e88e/1b342688-06ac-4233-98ee-f4e4175cf41d/_apis/work/boards/fea1de46-008a-444a-93bf-4eef1da0e500"
+        },
+        "project":{
+            "href":"https://dev.azure.com/AzureDevOpsDemo-a/_apis/projects/b1c34419-e080-4bf1-b12d-78710745e88e"
+        },
+        "team":{
+            "href":"https://dev.azure.com/AzureDevOpsDemo-a/_apis/projects/b1c34419-e080-4bf1-b12d-78710745e88e/teams/1b342688-06ac-4233-98ee-f4e4175cf41d"
+        },
+        "charts":{
+            "href":"https://dev.azure.com/AzureDevOpsDemo-a/b1c34419-e080-4bf1-b12d-78710745e88e/1b342688-06ac-4233-98ee-f4e4175cf41d/_apis/work/boards/fea1de46-008a-444a-93bf-4eef1da0e500/charts"
+        },
+        "columns":{
+            "href":"https://dev.azure.com/AzureDevOpsDemo-a/b1c34419-e080-4bf1-b12d-78710745e88e/1b342688-06ac-4233-98ee-f4e4175cf41d/_apis/work/boards/fea1de46-008a-444a-93bf-4eef1da0e500/columns"
+        },
+        "rows":{
+            "href":"https://dev.azure.com/AzureDevOpsDemo-a/b1c34419-e080-4bf1-b12d-78710745e88e/1b342688-06ac-4233-98ee-f4e4175cf41d/_apis/work/boards/fea1de46-008a-444a-93bf-4eef1da0e500/rows"
+        }
+    }
+}
