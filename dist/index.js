@@ -5154,7 +5154,7 @@ const github = __importStar(__webpack_require__(469));
 const azdev = __importStar(__webpack_require__(474));
 const witi = __importStar(__webpack_require__(574));
 function run() {
-    var _a, _b;
+    var _a, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
         try {
             // get input values
@@ -5169,27 +5169,18 @@ function run() {
             const context = github.context;
             const prUrl = (_a = context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.html_url;
             const prBody = (_b = context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.body;
-            const eventName = context.eventName;
-            const workflow = context.workflow;
-            const action = context.payload.action;
-            const comment = context.payload.comment;
-            const installation = context.payload.installation;
-            const issue = context.payload.issue;
-            const pullrequest = context.payload.pull_request;
-            const repository = context.payload.repository;
-            const sender = context.payload.sender;
+            const prNumber = (_c = context.payload.pull_request) === null || _c === void 0 ? void 0 : _c.number;
+            const { data: pullRequest } = yield octokit.pulls.get({
+                owner: 'abelsquidhead',
+                repo: 'TailwindsTraders-Website',
+                pull_number: prNumber,
+                mediaType: {
+                    format: 'diff'
+                }
+            });
             console.log("prUrl: " + prUrl);
             console.log("prBody: " + prBody);
-            console.log("workflow:" + workflow);
-            console.log("eventName:" + eventName);
-            console.log("workflow:" + workflow);
-            console.log("action:" + action);
-            console.log("comment:" + comment);
-            console.log("installation:" + installation);
-            console.log("issue:" + issue);
-            console.log("pullrequest:" + pullrequest);
-            console.log("repository:" + repository);
-            console.log("sender:" + sender);
+            console.log("pull request: " + pullRequest);
             // connect to AzD
             let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
             let token = "ppbs6zhmq5xtupvumfvxcx4qjbh7dxkro72tew5ia6na53lhmppq";
