@@ -3857,7 +3857,7 @@ function run() {
                     "op": "add",
                     "path": "/fields/System.State",
                     "from": null,
-                    "value": "ADOELPDemo\\Approved"
+                    "value": "Approved"
                 }
             ];
             console.log('trying to create work item');
