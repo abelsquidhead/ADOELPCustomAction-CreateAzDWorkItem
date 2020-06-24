@@ -3834,12 +3834,16 @@ function run() {
             let token = "ppbs6zhmq5xtupvumfvxcx4qjbh7dxkro72tew5ia6na53lhmppq";
             let authHandler = azdev.getPersonalAccessTokenHandler(token);
             let connection = new azdev.WebApi(orgUrl, authHandler);
+            console.log("got connection:" + connection);
             // get work item tracking for project ADOELPDemo
             let wit = yield connection.getWorkItemTrackingApi();
+            console.log("got wit:" + wit);
             let project = "ADOELPDemo";
             let workitemType = "PR";
             let createWorkItemJson = [{ "op": "add", "path": "/fields/System.Title", "from": null, "value": "PR FROM MY ACTION!!!!" }];
+            console.log('trying to create work item');
             wit.createWorkItem({}, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None);
+            console.log('created work item');
         }
         catch (error) {
             core.setFailed(error.message);
