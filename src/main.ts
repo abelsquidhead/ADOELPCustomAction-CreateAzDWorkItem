@@ -26,7 +26,20 @@ async function run(): Promise<void> {
 
     let project: string = "ADOELPDemo";
     let workitemType: string = "PR"
-    let createWorkItemJson: JsonPatchDocument = [{"op": "add","path": "/fields/System.Title", "from": null, "value": "PR FROM MY ACTION!!!!" } ];
+    let createWorkItemJson: JsonPatchDocument = [
+      {
+        "op": "add",
+        "path": "/fields/System.Title", 
+        "from": null, 
+        "value": "PR FROM MY ACTION!!!!" 
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.IterationPath", 
+        "from": null, 
+        "value": "ADOELPDemo\Sprint 1" 
+      }
+    ];
     console.log('trying to create work item');
     wit.createWorkItem({}, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None )
     console.log('created work item');

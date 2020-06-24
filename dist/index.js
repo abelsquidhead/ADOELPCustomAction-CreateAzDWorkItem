@@ -3840,7 +3840,20 @@ function run() {
             console.log("got wit:" + wit);
             let project = "ADOELPDemo";
             let workitemType = "PR";
-            let createWorkItemJson = [{ "op": "add", "path": "/fields/System.Title", "from": null, "value": "PR FROM MY ACTION!!!!" }];
+            let createWorkItemJson = [
+                {
+                    "op": "add",
+                    "path": "/fields/System.Title",
+                    "from": null,
+                    "value": "PR FROM MY ACTION!!!!"
+                },
+                {
+                    "op": "add",
+                    "path": "/fields/System.IterationPath",
+                    "from": null,
+                    "value": "ADOELPDemo\Sprint 1"
+                }
+            ];
             console.log('trying to create work item');
             wit.createWorkItem({}, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None);
             console.log('created work item');
