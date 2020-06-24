@@ -3830,7 +3830,7 @@ function run() {
             core.debug(`Hello ${myInput}  ...`);
             console.log("Hello " + myInput);
             // connect to AzD
-            let orgUrl = "https://dev.azure.com/ADOELPDemo";
+            let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
             let token = "ppbs6zhmq5xtupvumfvxcx4qjbh7dxkro72tew5ia6na53lhmppq";
             let authHandler = azdev.getPersonalAccessTokenHandler(token);
             let connection = new azdev.WebApi(orgUrl, authHandler);
