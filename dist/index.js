@@ -5174,9 +5174,6 @@ function run() {
                 owner: 'abelsquidhead',
                 repo: 'TailwindsTraders-Website',
                 pull_number: prNumber,
-                mediaType: {
-                    format: 'diff'
-                }
             });
             console.log("prUrl: " + prUrl);
             console.log("prBody: " + prBody);

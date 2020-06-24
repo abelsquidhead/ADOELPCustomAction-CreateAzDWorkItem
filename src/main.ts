@@ -29,9 +29,7 @@ async function run(): Promise<void> {
       owner: 'abelsquidhead',
       repo: 'TailwindsTraders-Website',
       pull_number: prNumber,
-      mediaType: {
-        format: 'diff'
-      }
+ 
     });
 
     
