@@ -1,4 +1,5 @@
 import * as core from '@actions/core'
+import * as github from '@actions/github'
 import * as azdev from "azure-devops-node-api";
 import * as witapi from "azure-devops-node-api/WorkItemTrackingApi";
 import * as witi from "azure-devops-node-api/interfaces/WorkItemTrackingInterfaces";
@@ -7,10 +8,24 @@ import { JsonPatchDocument } from 'azure-devops-node-api/interfaces/common/VSSIn
 
 async function run(): Promise<void> {
   try {
-    const myInput: string = core.getInput('myInput')
-    core.debug(`Hello ${myInput}  ...`)
-    console.log("Hello " + myInput)
 
+    // get input values
+    const myInput: string = core.getInput('myInput');
+    const myToken = core.getInput('myToken');
+    core.debug(`Hello ${myInput}  ...`);
+    console.log("myInput: " + myInput);
+    console.log("myToken: " + myToken);
+
+    // get reference to octokit
+    const octokit = github.getOctokit(myToken);
+
+    // get reference to current context
+    const context = github.context;
+    const prUrl = context.payload.pull_request?.html_url;
+    const prBody = context.payload.pull_request?.body;
+
+    console.log("prUrl: " + prUrl);
+    console.log("prBody: " + prBody);
 
     // connect to AzD
     let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
@@ -19,7 +34,7 @@ async function run(): Promise<void> {
     let connection = new azdev.WebApi(orgUrl, authHandler); 
     console.log("got connection:" + connection);
 
-    // get work item tracking for project ADOELPDemo
+    // get work item tracking for projemct ADOELPDemo
     let wit: witapi.IWorkItemTrackingApi = await connection.getWorkItemTrackingApi()
     console.log("got wit:" + wit);
 
