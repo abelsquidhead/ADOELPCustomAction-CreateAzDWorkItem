@@ -3839,7 +3839,7 @@ function run() {
             let project = "ADOELPDemo";
             let workitemType = "PR";
             let createWorkItemJson = [{ "op": "add", "path": "/fields/System.Title", "from": null, "value": "PR FROM MY ACTION!!!!" }];
-            wit.createWorkItem(null, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None);
+            wit.createWorkItem({}, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None);
         }
         catch (error) {
             core.setFailed(error.message);

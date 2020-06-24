@@ -24,7 +24,7 @@ async function run(): Promise<void> {
     let project: string = "ADOELPDemo";
     let workitemType: string = "PR"
     let createWorkItemJson: JsonPatchDocument = [{"op": "add","path": "/fields/System.Title", "from": null, "value": "PR FROM MY ACTION!!!!" } ];
-    wit.createWorkItem(null, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None )
+    wit.createWorkItem({}, createWorkItemJson, project, workitemType, false, false, false, witi.WorkItemExpand.None )
 
   } catch (error) {
     core.setFailed(error.message)
