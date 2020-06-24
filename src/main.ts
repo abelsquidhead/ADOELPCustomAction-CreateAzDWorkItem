@@ -32,12 +32,14 @@ async function run(): Promise<void> {
  
     });
 
+    const title = pullRequest.title
+
     
 
     console.log("prUrl: " + prUrl);
     console.log("prBody: " + prBody);
 
-    console.log("pull request: " + pullRequest);
+    console.log("title: " + title);
 
 
     // connect to AzD

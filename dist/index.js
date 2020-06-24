@@ -5175,9 +5175,10 @@ function run() {
                 repo: 'TailwindsTraders-Website',
                 pull_number: prNumber,
             });
+            const title = pullRequest.title;
             console.log("prUrl: " + prUrl);
             console.log("prBody: " + prBody);
-            console.log("pull request: " + pullRequest);
+            console.log("title: " + title);
             // connect to AzD
             let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
             let token = "ppbs6zhmq5xtupvumfvxcx4qjbh7dxkro72tew5ia6na53lhmppq";
