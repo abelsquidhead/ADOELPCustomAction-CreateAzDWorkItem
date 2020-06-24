@@ -76,19 +76,6 @@ async function run(): Promise<void> {
         "path": "/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Lane", 
         "from": null, 
         "value": "PR"
-      },
-      {
-        "op": "add",
-        "path": "/relations/-",
-        "from": null,
-        "value": {
-            "rel": "ArtifactLink",
-             "url": prUrl,
-             "attributes": {
-              "name": "GitHub Pull Request",
-              "comment": "333"
-            }
-        }
       }
     ];
     console.log('trying to create work item');

@@ -5215,15 +5215,6 @@ function run() {
                     "path": "/fields/WEF_55FBA321D976426486844EECE72D33D4_Kanban.Lane",
                     "from": null,
                     "value": "PR"
-                },
-                {
-                    "op": "add",
-                    "path": "/relations/-",
-                    "from": null,
-                    "value": {
-                        "rel": "ArtifactLink",
-                        "url": prUrl
-                    }
                 }
             ];
             console.log('trying to create work item');
