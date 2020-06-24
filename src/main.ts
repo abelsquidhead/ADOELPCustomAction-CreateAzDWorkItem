@@ -37,7 +37,7 @@ async function run(): Promise<void> {
         "op": "add",
         "path": "/fields/System.IterationPath", 
         "from": null, 
-        "value": "ADOELPDemo\Sprint 1" 
+        "value": "ADOELPDemo\\Sprint 1"
       }
     ];
     console.log('trying to create work item');
