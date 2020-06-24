@@ -5169,8 +5169,10 @@ function run() {
             const context = github.context;
             const prUrl = (_a = context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.html_url;
             const prBody = (_b = context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.body;
+            const eventName = context.eventName;
             console.log("prUrl: " + prUrl);
             console.log("prBody: " + prBody);
+            console.log("eventName:" + eventName);
             // connect to AzD
             let orgUrl = "https://dev.azure.com/AzureDevOpsDemo-a";
             let token = "ppbs6zhmq5xtupvumfvxcx4qjbh7dxkro72tew5ia6na53lhmppq";
