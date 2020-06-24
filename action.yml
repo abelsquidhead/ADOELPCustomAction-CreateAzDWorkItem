@@ -1,6 +1,6 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'pr-workitem-creator'
+description: 'this action will create a PR work item in my demo instance'
+author: 'abelsquidhead'
 inputs:
   myInput:              # change this
     description: 'input description here'
